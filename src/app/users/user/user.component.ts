@@ -7,18 +7,18 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+
   user: {id: number, name: string};
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
    
-   console.log('ngOnInit of UserComponent');
-
    this.route.params.subscribe(
-     (params: Params)=> {
-      console.log('this is from the observable!')
-     }
+    
+    (params: Params) => {     
+      this.user = { id: params.id, name: params.name};
+    }
    )
   }
 

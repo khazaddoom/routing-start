@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Route, ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -22,10 +22,15 @@ export class UsersComponent {
     }
   ];
 
-  constructor(private appRoutes: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    console.log('ngOnInit of Users Component');
+    
+    // // console.log('ngOnInit of Users Component');
+    // this.route.params.subscribe((params: Params) => {
+    //   console.log(params)
+    // })
+
     
   }
 
