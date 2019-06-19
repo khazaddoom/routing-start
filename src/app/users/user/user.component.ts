@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -8,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class UserComponent implements OnInit {
   user: {id: number, name: string};
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+   
+   console.log('ngOnInit of UserComponent');
+
+   this.route.params.subscribe(
+     (params: Params)=> {
+      console.log('this is from the observable!')
+     }
+   )
+  }
+
+  handleClick() {
+    this.router.navigate(['users', '123123']);
   }
 
 }

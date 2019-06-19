@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -20,4 +21,14 @@ export class UsersComponent {
       name: 'Chris'
     }
   ];
+
+  constructor(private appRoutes: ActivatedRoute) {}
+
+  ngOnInit() {
+    console.log('ngOnInit of Users Component');
+    
+  }
+
+  
+
 }
